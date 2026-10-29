@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fadynagib1983-bot.github.io/fadynagib1983-bot/sitemap.xml
