@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WizSofts Global &bull; High-Performance Windows Workstation OS</title>
-    <meta name="description" content="Discover 100% offline, native 64-bit Windows software suites and comprehensive educational packages. Zero recurring fees, bank-grade privacy.">
+    <title>WizSofts Global &bull; Next-Gen Windows Desktop Suites & Educational Systems</title>
+    <meta name="description" content="Discover 15 flagship native Windows software suites and complete 3-in-1 educational bundles (App + Desktop + Book). 100% offline, bank-grade privacy, zero subscriptions.">
     <link rel="canonical" href="https://fadynagib1983-bot.github.io/fadynagib1983-bot/">
     <meta name="robots" content="index, follow">
     <style>
         :root {
             --primary: #10B981;
             --primary-dark: #059669;
+            --primary-soft: #ECFDF5;
             --bg: #F8FAF9;
             --card: #FFFFFF;
             --text: #0F172A;
             --muted: #475569;
             --border: #E2E8F0;
+            --amber-soft: #FEF3C7;
+            --amber-dark: #B45309;
         }
+        * { box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background: var(--bg);
             color: var(--text);
             margin: 0;
@@ -28,92 +32,186 @@
         .header {
             background: white;
             border-bottom: 2px solid var(--primary);
-            padding: 18px 32px;
+            padding: 16px 36px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
         .brand {
             font-size: 22px;
             font-weight: 900;
             color: #0F172A;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
         .brand span { color: var(--primary); }
         .hero {
-            max-width: 960px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 980px;
+            margin: 48px auto 36px;
+            padding: 0 24px;
             text-align: center;
         }
-        .badge {
-            display: inline-block;
-            background: rgba(16, 185, 129, 0.12);
+        .top-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-soft);
             color: var(--primary-dark);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 13px;
+            border: 1px solid #A7F3D0;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 13.5px;
             font-weight: 800;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
         h1 {
-            font-size: 36px;
+            font-size: 42px;
             color: #0F172A;
-            margin: 10px 0;
-            line-height: 1.25;
+            margin: 0 0 16px;
+            line-height: 1.2;
+            font-weight: 900;
+            letter-spacing: -0.5px;
         }
         p.subtitle {
-            font-size: 18px;
+            font-size: 19px;
             color: var(--muted);
-            max-width: 700px;
-            margin: 0 auto 36px;
+            max-width: 760px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        .trust-strip {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin: 28px 0;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #334155;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .section-title {
+            text-align: center;
+            max-width: 1200px;
+            margin: 40px auto 24px;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .section-title h2 {
+            font-size: 24px;
+            font-weight: 900;
+            margin: 0;
+            color: #0F172A;
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1060px;
-            margin: 30px auto;
-            padding: 0 20px;
-            text-align: left;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 0 24px;
         }
         .card {
             background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
             padding: 24px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 24px -6px rgba(16, 185, 129, 0.12);
+        }
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        .badge-desktop {
+            background: #EFF6FF;
+            color: #1E40AF;
+            border: 1px solid #BFDBFE;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11.5px;
+            font-weight: 800;
+        }
+        .badge-bundle {
+            background: var(--amber-soft);
+            color: var(--amber-dark);
+            border: 1px solid #FDE68A;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11.5px;
+            font-weight: 800;
+        }
+        .card-num {
+            font-size: 13px;
+            font-weight: 900;
+            color: #94A3B8;
         }
         .card h3 {
-            margin: 0 0 8px;
-            font-size: 18px;
+            margin: 0 0 10px;
+            font-size: 19px;
+            font-weight: 900;
             color: #0F172A;
         }
-        .card p {
-            color: var(--muted);
+        .card p.pitch {
+            color: #334155;
             font-size: 13.5px;
-            margin-bottom: 20px;
+            line-height: 1.55;
+            margin: 0 0 22px;
             flex-grow: 1;
         }
+        .btn-row {
+            display: flex;
+            gap: 10px;
+        }
         .btn {
-            display: inline-block;
-            padding: 10px 18px;
-            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 11px 18px;
+            border-radius: 8px;
             font-size: 13.5px;
             font-weight: 800;
             text-decoration: none;
-            text-align: center;
             transition: all 0.2s;
+            cursor: pointer;
         }
         .btn-primary {
             background: var(--primary);
             color: white;
+            box-shadow: 0 2px 6px rgba(16, 185, 129, 0.25);
         }
         .btn-primary:hover {
             background: var(--primary-dark);
+        }
+        .btn-secondary {
+            background: #0F172A;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background: #1E293B;
         }
         .btn-outline {
             background: transparent;
@@ -123,112 +221,320 @@
         .btn-outline:hover {
             border-color: var(--primary);
             color: var(--primary);
+            background: var(--primary-soft);
         }
         .footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--muted);
-            font-size: 13px;
+            background: white;
             border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 48px 24px;
+            color: var(--muted);
+            font-size: 13.5px;
             margin-top: 60px;
+        }
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <a href="https://fadynagib1983-bot.github.io/fadynagib1983-bot/" class="brand">WizSofts <span>Desktop OS</span></a>
-        <div>
-            <a href="https://wizsofts.com" class="btn btn-primary">Official Store</a>
+        <a href="https://fadynagib1983-bot.github.io/fadynagib1983-bot/" class="brand">
+            WizSofts <span>Software OS</span>
+        </a>
+        <div style="display:flex; gap:12px;">
+            <a href="https://github.com/fadynagib1983-bot" class="btn btn-outline" style="padding:8px 16px; font-size:12.5px;">GitHub Showcase</a>
+            <a href="https://wizsofts.com" class="btn btn-primary" style="padding:8px 18px; font-size:12.5px;">Visit Official Store</a>
         </div>
     </div>
 
     <div class="hero">
-        <div class="badge">100% Offline &bull; Native 64-Bit Architecture</div>
-        <h1>High-Performance Windows Workstations</h1>
-        <p class="subtitle">Experience permanent lifetime ownership. Zero cloud latency, zero recurring subscriptions, bank-grade PC execution.</p>
+        <div class="top-badge">⚡ 100% Offline Native 64-Bit Software &bull; Zero Cloud Telemetry</div>
+        <h1>Engineered for Total Ownership.<br>Zero Recurring Subscription Bills.</h1>
+        <p class="subtitle">
+            Say goodbye to monthly cloud subscription traps. Experience native Windows workstations and 3-in-1 cognitive educational bundles running 100% locally in PC RAM.
+        </p>
+
+        <div class="trust-strip">
+            <div class="trust-item">🔒 <strong>Bank-Grade Local Privacy</strong></div>
+            <div class="trust-item">⚡ <strong>Instant RAM Speed</strong></div>
+            <div class="trust-item">📜 <strong>Permanent Lifetime License</strong></div>
+            <div class="trust-item">🛡️ <strong>100% Air-Gapped Ready</strong></div>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <h2>Official Software Suites (All 15 Products)</h2>
+        <span style="font-size:13px; font-weight:800; color:var(--primary);">15 Active Products &bull; Verified Offline</span>
     </div>
 
     <div class="grid">
-        <!-- Card 1 -->
+        <!-- 1. PDF Merge Master Pro -->
         <div class="card">
             <div>
-                <span class="badge" style="font-size: 11px; padding: 4px 10px; margin-bottom: 10px;">Offline Desktop Utility</span>
+                <div class="card-top">
+                    <span class="badge-desktop">💻 Desktop Utility</span>
+                    <span class="card-num">#01</span>
+                </div>
                 <h3>PDF Merge Master Pro</h3>
-                <p>Native 64-bit batch PDF merger, splitter, and document security engine. Runs 100% in local PC RAM.</p>
+                <p class="pitch">
+                    Stop paying Adobe $240/yr. Merge, split, encrypt, reorder, and watermark unlimited PDF bundles directly in local RAM. Zero uploads, zero data leaks, infinite offline speed.
+                </p>
             </div>
-            <div style="display: flex; gap: 8px;">
-                <a href="https://github.com/fadynagib1983-bot/fadynagib1983-bot/releases/download/v1.1.0-trial/PDF_Merge_Master_Pro_Setup_Trial.exe" class="btn btn-primary" style="flex:1;">Download Trial</a>
-                <a href="pdf-merge-master-pro/alternative-to-adobe-acrobat.html" class="btn btn-outline" style="flex:1;">SEO Portal</a>
+            <div class="btn-row">
+                <a href="https://github.com/fadynagib1983-bot/fadynagib1983-bot/releases/download/v1.1.0-trial/PDF_Merge_Master_Pro_Setup_Trial.exe" class="btn btn-primary" style="flex:1;">📥 Download Trial</a>
+                <a href="https://wizsofts.com/landing/pdf-merge-master-pro/" class="btn btn-secondary" style="flex:1;">🛒 Lifetime Key</a>
             </div>
         </div>
 
-        <!-- Card 2 -->
+        <!-- 2. ITS Pro Suite -->
         <div class="card">
             <div>
-                <span class="badge" style="font-size: 11px; padding: 4px 10px; margin-bottom: 10px;">Internet & Diagnostics</span>
+                <div class="card-top">
+                    <span class="badge-desktop">💻 Desktop Suite</span>
+                    <span class="card-num">#02</span>
+                </div>
                 <h3>ITS Pro Suite</h3>
-                <p>High-speed 4K media downloader, raw stream archiver, and network ICMP socket diagnostics suite.</p>
+                <p class="pitch">
+                    The modern, clean IDM killer. Grab raw 4K 60fps streams, download entire playlists without watermarks, convert audio locally, and diagnose network ICMP sockets with zero ads.
+                </p>
             </div>
-            <div style="display: flex; gap: 8px;">
-                <a href="https://github.com/fadynagib1983-bot/fadynagib1983-bot/releases/download/v1.0.0-trial/ITS_Pro_Suite_Setup_Trial_V1.0.exe" class="btn btn-primary" style="flex:1;">Download Trial</a>
-                <a href="https://wizsofts.com/landing/its-pro-suite/" class="btn btn-outline" style="flex:1;">Store Key</a>
+            <div class="btn-row">
+                <a href="https://github.com/fadynagib1983-bot/fadynagib1983-bot/releases/download/v1.0.0-trial/ITS_Pro_Suite_Setup_Trial_V1.0.exe" class="btn btn-primary" style="flex:1;">📥 Download Trial</a>
+                <a href="https://wizsofts.com/landing/its-pro-suite/" class="btn btn-secondary" style="flex:1;">🛒 Lifetime Key</a>
             </div>
         </div>
 
-        <!-- Card 3 -->
+        <!-- 3. Nexus Global ERP -->
         <div class="card">
             <div>
-                <span class="badge" style="font-size: 11px; padding: 4px 10px; margin-bottom: 10px;">Business ERP</span>
+                <div class="card-top">
+                    <span class="badge-desktop">💻 Desktop System</span>
+                    <span class="card-num">#03</span>
+                </div>
                 <h3>Nexus Global ERP</h3>
-                <p>Local multi-warehouse inventory control, offline POS terminal, and double-entry accounting ledger.</p>
+                <p class="pitch">
+                    Bulletproof local ERP for smart businesses. Manage multi-warehouse stock, offline barcode POS registers, and double-entry general ledgers without relying on cloud connections.
+                </p>
             </div>
-            <div>
-                <a href="https://wizsofts.com/programs/nexus-global-erp" class="btn btn-outline" style="width:100%; box-sizing:border-box;">View Full System</a>
+            <div class="btn-row">
+                <a href="https://wizsofts.com/programs/nexus-global-erp" class="btn btn-secondary" style="width:100%;">🛒 View Enterprise System</a>
             </div>
         </div>
 
-        <!-- Card 4 -->
+        <!-- 4. UCE-MASS Smart Mind Pro -->
         <div class="card">
             <div>
-                <span class="badge" style="font-size: 11px; padding: 4px 10px; margin-bottom: 10px;">Complete 3-in-1 Bundle</span>
+                <div class="card-top">
+                    <span class="badge-bundle">📦 Complete 3-in-1 Bundle</span>
+                    <span class="card-num">#04</span>
+                </div>
                 <h3>UCE-MASS Smart Mind Pro</h3>
-                <p>Interactive Soroban abacus bead simulation, Flash Anzan speed drills, and verified mental math curriculum.</p>
+                <p class="pitch">
+                    Turn kids and adults into human calculators. Interactive Japanese Soroban abacus simulation + Flash Anzan visual speed drills that multiply mental calculation speed by 300%.
+                </p>
             </div>
-            <div>
-                <a href="https://wizsofts.com/product/uce-mass-smart-mind/" class="btn btn-outline" style="width:100%; box-sizing:border-box;">View 3-in-1 Bundle</a>
+            <div class="btn-row">
+                <a href="https://wizsofts.com/product/uce-mass-smart-mind/" class="btn btn-secondary" style="width:100%;">📦 Get 3-in-1 Bundle (App+PC+Book)</a>
             </div>
         </div>
 
-        <!-- Card 5 -->
+        <!-- 5. Magic Number Key -->
         <div class="card">
             <div>
-                <span class="badge" style="font-size: 11px; padding: 4px 10px; margin-bottom: 10px;">Complete 3-in-1 Bundle</span>
+                <div class="card-top">
+                    <span class="badge-bundle">📦 Complete 3-in-1 Bundle</span>
+                    <span class="card-num">#05</span>
+                </div>
+                <h3>Magic Number Key</h3>
+                <p class="pitch">
+                    Master the legendary Trachtenberg Speed Arithmetic System. Multiply 10-digit numbers mentally in seconds without memorizing multiplication tables through visual neuro-anchors.
+                </p>
+            </div>
+            <div class="btn-row">
+                <a href="https://wizsofts.com/product/magic-number-key/" class="btn btn-secondary" style="width:100%;">📦 Get 3-in-1 Bundle (App+PC+Book)</a>
+            </div>
+        </div>
+
+        <!-- 6. Vedic Math Genius -->
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <span class="badge-bundle">📦 Complete 3-in-1 Bundle</span>
+                    <span class="card-num">#06</span>
+                </div>
                 <h3>Vedic Math Genius</h3>
-                <p>Master all 16 Vedic Mathematics Sutras with instant calculation visualizers and speed competition drills.</p>
+                <p class="pitch">
+                    Crush international Math Olympiads. Master all 16 sacred Vedic Sutras with high-speed calculation engines and instant algebraic visualizers that solve equations in 3 seconds.
+                </p>
             </div>
-            <div>
-                <a href="https://wizsofts.com/product/vedic-math-genius/" class="btn btn-outline" style="width:100%; box-sizing:border-box;">View 3-in-1 Bundle</a>
+            <div class="btn-row">
+                <a href="https://wizsofts.com/product/vedic-math-genius/" class="btn btn-secondary" style="width:100%;">📦 Get 3-in-1 Bundle (App+PC+Book)</a>
             </div>
         </div>
 
-        <!-- Card 6 -->
+        <!-- 7. Working Brain Engine -->
         <div class="card">
             <div>
-                <span class="badge" style="font-size: 11px; padding: 4px 10px; margin-bottom: 10px;">Complete 3-in-1 Bundle</span>
+                <div class="card-top">
+                    <span class="badge-bundle">📦 Complete 3-in-1 Bundle</span>
+                    <span class="card-num">#07</span>
+                </div>
                 <h3>Working Brain Engine</h3>
-                <p>Dual N-Back cognitive fluid intelligence expansion. Neuroscientific working memory trainer for Windows.</p>
+                <p class="pitch">
+                    Expand working memory and fluid intelligence (Gf). The only clinical-grade Dual N-Back neuro-trainer running 100% locally to sharpen laser executive focus under stress.
+                </p>
             </div>
+            <div class="btn-row">
+                <a href="https://wizsofts.com/product/working-brain-engine/" class="btn btn-secondary" style="width:100%;">📦 Get 3-in-1 Bundle (App+PC+Book)</a>
+            </div>
+        </div>
+
+        <!-- 8. Photographic Memory Pro -->
+        <div class="card">
             <div>
-                <a href="https://wizsofts.com/product/working-brain-engine/" class="btn btn-outline" style="width:100%; box-sizing:border-box;">View 3-in-1 Bundle</a>
+                <div class="card-top">
+                    <span class="badge-bundle">📦 Complete 3-in-1 Bundle</span>
+                    <span class="card-num">#08</span>
+                </div>
+                <h3>Photographic Memory Pro</h3>
+                <p class="pitch">
+                    Develop eidetic memory retention using the proven Shichida method. Optical afterimage trainers, eye-muscle saccadic speed builders, and flash mandala visual puzzle solvers.
+                </p>
+            </div>
+            <div class="btn-row">
+                <a href="https://wizsofts.com/product/photographic-memory-pro/" class="btn btn-secondary" style="width:100%;">📦 Get 3-in-1 Bundle (App+PC+Book)</a>
+            </div>
+        </div>
+
+        <!-- 9. Brain Radar -->
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <span class="badge-bundle">📦 Complete 3-in-1 Bundle</span>
+                    <span class="card-num">#09</span>
+                </div>
+                <h3>Brain Radar</h3>
+                <p class="pitch">
+                    Eliminate cognitive hesitation and decision lag. Measure reaction speed to the exact millisecond and master the Stroop Interference test to build unshakeable mental clarity.
+                </p>
+            </div>
+            <div class="btn-row">
+                <a href="https://wizsofts.com/product/brain-radar/" class="btn btn-secondary" style="width:100%;">📦 Get 3-in-1 Bundle (App+PC+Book)</a>
+            </div>
+        </div>
+
+        <!-- 10. Solid Memory Engine -->
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <span class="badge-bundle">📦 Complete 3-in-1 Bundle</span>
+                    <span class="card-num">#10</span>
+                </div>
+                <h3>Solid Memory Engine</h3>
+                <p class="pitch">
+                    Defeat the Ebbinghaus forgetting curve permanently. Algorithmic Leitner 5-box spaced repetition system engineered for medical students and bar exam lawyers. Zero cloud limits.
+                </p>
+            </div>
+            <div class="btn-row">
+                <a href="https://wizsofts.com/product/solid-memory-engine/" class="btn btn-secondary" style="width:100%;">📦 Get 3-in-1 Bundle (App+PC+Book)</a>
+            </div>
+        </div>
+
+        <!-- 11. Doomsday Calendar Master -->
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <span class="badge-bundle">📦 Complete 3-in-1 Bundle</span>
+                    <span class="card-num">#11</span>
+                </div>
+                <h3>Doomsday Calendar Master</h3>
+                <p class="pitch">
+                    Calculate the exact day of the week for any date in human history in 5 seconds flat. Master John Conway's legendary mental calendar algorithms through gamified speed drills.
+                </p>
+            </div>
+            <div class="btn-row">
+                <a href="https://wizsofts.com/product/doomsday-calendar-master/" class="btn btn-secondary" style="width:100%;">📦 Get 3-in-1 Bundle (App+PC+Book)</a>
+            </div>
+        </div>
+
+        <!-- 12. Braille Matrix Master -->
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <span class="badge-bundle">📦 Complete 3-in-1 Bundle</span>
+                    <span class="card-num">#12</span>
+                </div>
+                <h3>Braille Matrix Master</h3>
+                <p class="pitch">
+                    World-class assistive Braille literacy simulator. Translate any English text into Unified English Braille (UEB) Grade 1 & 2 contractions with tactile 6-dot matrix cell feedback.
+                </p>
+            </div>
+            <div class="btn-row">
+                <a href="https://wizsofts.com/product/braille-matrix-master/" class="btn btn-secondary" style="width:100%;">📦 Get 3-in-1 Bundle (App+PC+Book)</a>
+            </div>
+        </div>
+
+        <!-- 13. Articulatory Voice Engine -->
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <span class="badge-bundle">📦 Complete 3-in-1 Bundle</span>
+                    <span class="card-num">#13</span>
+                </div>
+                <h3>Articulatory Voice Engine</h3>
+                <p class="pitch">
+                    Professional acoustic phonetics and speech therapy workstation. Master international phonetic alphabet (IPA) pronunciations with real-time vocal tract and spectrogram visualizers.
+                </p>
+            </div>
+            <div class="btn-row">
+                <a href="https://wizsofts.com/product/articulatory-voice-engine/" class="btn btn-secondary" style="width:100%;">📦 Get 3-in-1 Bundle (App+PC+Book)</a>
+            </div>
+        </div>
+
+        <!-- 14. Smart Car Builder -->
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <span class="badge-bundle">📦 Complete 3-in-1 Bundle</span>
+                    <span class="card-num">#14</span>
+                </div>
+                <h3>Smart Car Builder</h3>
+                <p class="pitch">
+                    Hands-on autonomous robotics simulator for engineers. Build virtual LiDAR sensor raycasting, test self-driving PID controllers, and simulate obstacle avoidance robotics locally.
+                </p>
+            </div>
+            <div class="btn-row">
+                <a href="https://wizsofts.com/product/smart-car-builder/" class="btn btn-secondary" style="width:100%;">📦 Get 3-in-1 Bundle (App+PC+Book)</a>
+            </div>
+        </div>
+
+        <!-- 15. Copter Craft Studio -->
+        <div class="card">
+            <div>
+                <div class="card-top">
+                    <span class="badge-bundle">📦 Complete 3-in-1 Bundle</span>
+                    <span class="card-num">#15</span>
+                </div>
+                <h3>Copter Craft Studio</h3>
+                <p class="pitch">
+                    Multi-rotor drone physics laboratory. Simulate quadcopter aerodynamic lift, tune multi-loop PID attitude controllers, and master UAV flight stabilization without crashing real drones.
+                </p>
+            </div>
+            <div class="btn-row">
+                <a href="https://wizsofts.com/product/copter-craft-studio/" class="btn btn-secondary" style="width:100%;">📦 Get 3-in-1 Bundle (App+PC+Book)</a>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        &copy; 2026 WizSofts. Official Distribution Network hosted on GitHub Pages.<br>
-        <a href="sitemap.xml" style="color: var(--primary); text-decoration:none;">XML Sitemap</a> &bull; 
-        <a href="https://github.com/fadynagib1983-bot" style="color: var(--primary); text-decoration:none;">GitHub Showcase</a> &bull; 
-        <a href="https://wizsofts.com" style="color: var(--primary); text-decoration:none;">WizSofts.com</a>
+        &copy; 2026 WizSofts Global. All software operates 100% locally on Windows.<br>
+        <a href="https://github.com/fadynagib1983-bot">GitHub Developer Profile</a> &bull;
+        <a href="sitemap.xml">XML Sitemap</a> &bull;
+        <a href="https://wizsofts.com">WizSofts Official Store</a>
     </div>
 </body>
 </html>
